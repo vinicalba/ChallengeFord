@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Ford</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            background-color: rgb(119, 119, 119);
+        }
+        table.table {
+            width: 500px;
+            margin: auto;
+            padding: 200px;
+            margin-top: 40px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu"></div>
+    <table class="table table-dark">
+        <tr>
+            <th colspan="6" style="text-align: center; background-color: rgb(119, 119, 119); color: rgb(255, 255, 255); border-radius: 10px 10px 0px 0px;">Cadastros</th>
+        </tr>
+        <tr>
+            <td colspan="6" style="text-align: center; background-color: rgb(119, 119, 119); border: 0;">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUsuario">
+          USUÁRIO
+        </button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" style="text-align: center; background-color: rgb(119, 119, 119); border: 0;">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCarros">
+          CARROS
+        </button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" style="text-align: center; background-color: rgb(119, 119, 119); border-radius: 0px 0px 10px 10px;">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalConhecidos">
+          CONHECIDOS
+        </button>
+            </td>
+        </tr>
+        <figure>
+            <img src="./img/fordterritory.png" alt="ford territory" class="foto">
+        </figure>
+    </table>
+    <!-- Modal Usuário -->
+    <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="text-align: center; background-color: #212529;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btnCloseHeader"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-dark" id="tabelaRegistros">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center; background-color: rgb(119, 119, 119);">
+                                    <span id="txtheadmodal">Usuário</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>Nome</span>
+                                <input type="text" class="form-control" id="txtNome" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>CPF</span>
+                                <input type="text" class="form-control" id="txtCPF" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>TELEFONE</span>
+                                <input type="text" class="form-control" id="txtTelefone" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>DATA NASCIMENTO</span>
+                                <input type="text" class="form-control" id="txtDataNascimento" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>EMAIL</span>
+                                <input type="text" class="form-control" id="txtEmail" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>ESTADO</span>
+                                <select class="form-control" id="selectUF"></select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>CIDADE</span>
+                                <select class="form-control" id="selectCidades"></select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCancelar">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btnSalvar">Salvar</button>
+                    <button type="button" class="btn btn-danger" id="btnExcluir" disabled>Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim Modal Usuário -->
+    <!-- Modal Carros -->
+    <div class="modal fade" id="modalCarros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="text-align: center; background-color: #212529;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btnCloseHeader"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-dark" id="tabelaRegistros">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center; background-color: rgb(119, 119, 119);">
+                                    <span id="txtheadmodal">Carro</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>Placa</span>
+                                <input type="text" class="form-control" id="txtPlaca" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>Modelo</span>
+                                <input type="text" class="form-control" id="txtModelo" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>Ano</span>
+                                <input type="text" class="form-control" id="txtAno" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>KM</span>
+                                <input type="text" class="form-control" id="txtKm" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCancelar">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btnSalvarCarro">Salvar</button>
+                    <button type="button" class="btn btn-danger" id="btnExcluir" disabled>Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim Modal Carros -->
+    <!-- Modal Conhecidos -->
+    <div class="modal fade" id="modalConhecidos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="text-align: center; background-color: #212529;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btnCloseHeader"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-dark" id="tabelaRegistros">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center; background-color: rgb(119, 119, 119);">
+                                    <span id="txtheadmodal">Conhecidos</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>Nome</span>
+                                <input type="text" class="form-control" id="txtNomeKnown" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>CPF</span>
+                                <input type="text" class="form-control" id="txtCPFKnown" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>TELEFONE</span>
+                                <input type="text" class="form-control" id="txtTelefoneKnown" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>DATA NASCIMENTO</span>
+                                <input type="text" class="form-control" id="txtDataNascimentoKnown" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span>EMAIL</span>
+                                <input type="text" class="form-control" id="txtEmailKnown" aria-label="Text input with checkbox">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>ESTADO</span>
+                                <select class="form-control" id="selectUFKnown"></select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>CIDADE</span>
+                                <select class="form-control" id="selectCidadesKnown"></select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCancelar">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btnSalvarKnown">Salvar</button>
+                    <button type="button" class="btn btn-danger" id="btnExcluir" disabled>Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim Modal Conhecidos -->
+    <div class="loading-spinner">
+        <svg id="hourglass" width='64px' height='64px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="uil-hourglass">
+        <rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect>
+        <g>
+          <path fill="none" stroke="#007282" stroke-width="5" stroke-miterlimit="10"
+            d="M58.4,51.7c-0.9-0.9-1.4-2-1.4-2.3s0.5-0.4,1.4-1.4 C70.8,43.8,79.8,30.5,80,15.5H70H30H20c0.2,15,9.2,28.1,21.6,32.3c0.9,0.9,1.4,1.2,1.4,1.5s-0.5,1.6-1.4,2.5 C29.2,56.1,20.2,69.5,20,85.5h10h40h10C79.8,69.5,70.8,55.9,58.4,51.7z"
+            class="glass"></path>
+          <clipPath id="uil-hourglass-clip1">
+            <rect x="15" y="20" width="70" height="25" class="clip">
+              <animate attributeName="height" from="25" to="0" dur="1s" repeatCount="indefinite" vlaues="25;0;0"
+                keyTimes="0;0.5;1"></animate>
+              <animate attributeName="y" from="20" to="45" dur="1s" repeatCount="indefinite" vlaues="20;45;45"
+                keyTimes="0;0.5;1"></animate>
+            </rect>
+          </clipPath>
+          <clipPath id="uil-hourglass-clip2">
+            <rect x="15" y="55" width="70" height="25" class="clip">
+              <animate attributeName="height" from="0" to="25" dur="1s" repeatCount="indefinite" vlaues="0;25;25"
+                keyTimes="0;0.5;1"></animate>
+              <animate attributeName="y" from="80" to="55" dur="1s" repeatCount="indefinite" vlaues="80;55;55"
+                keyTimes="0;0.5;1"></animate>
+            </rect>
+          </clipPath>
+          <path d="M29,23c3.1,11.4,11.3,19.5,21,19.5S67.9,34.4,71,23H29z" clip-path="url(#uil-hourglass-clip1)"
+            fill="#ffab00" class="sand"></path>
+          <path d="M71.6,78c-3-11.6-11.5-20-21.5-20s-18.5,8.4-21.5,20H71.6z" clip-path="url(#uil-hourglass-clip2)"
+            fill="#ffab00" class="sand"></path>
+          <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="180 50 50" repeatCount="indefinite"
+            dur="1s" values="0 50 50;0 50 50;180 50 50" keyTimes="0;0.7;1">
+          </animateTransform>
+        </g>
+      </svg>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.9.0/stitch.js"></script>
+    <script src="./js/pessoa.js"></script>
+    <script src="./js/carro.js"></script>
+    <script src="./js/usuario.js"></script>
+    <script src="./js/conhecido.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/cadastro.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+{
+    "api-key": {
+        "name": "api-key",
+        "type": "api-key",
+        "disabled": true
+    },
+    "oauth2-google": {
+        "name": "oauth2-google",
+        "type": "oauth2-google",
+        "config": {
+            "clientId": "942062775860-e6f1ockvhq0boed3m8c8boa50ifrnm95.apps.googleusercontent.com"
+        },
+        "secret_config": {
+            "clientSecret": "CFSecret"
+        },
+        "disabled": false,
+        "metadata_fields": [{
+                "required": false,
+                "name": "name"
+            },
+            {
+                "required": false,
+                "name": "first_name"
+            },
+            {
+                "required": false,
+                "name": "last_name"
+            },
+            {
+                "required": false,
+                "name": "picture"
+            },
+            {
+                "required": false,
+                "name": "email"
+            }
+        ],
+        "redirect_uris": [
+            "https://challengeford-xdrkg.mongodbstitch.com/login.html",
+            "http://127.0.0.1:5550/hosting/files/login.html",
+            "http://127.0.0.1:5500/challengeford/hosting/files/login.html",
+            "http://127.0.0.1:5500/login.html"
+        ]
+    }
+}
