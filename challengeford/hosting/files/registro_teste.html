@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Ford</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200&display=swap');
+
+    :root{
+
+        --cor01: #0057ab;
+        --cor02: #234E75;
+        --cor03: #002F5C;
+        --cor04: #326FAb;
+        --cor05: #004F99;
+    }
+
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+        body{
+            background-color: silver;
+            font-family: 'Inter Tight', sans-serif;
+        }
+
+        header{
+            background-image: linear-gradient(to bottom, var(--cor05), var(--cor02));
+            color: white;
+            font-size: 1.3rem;
+            
+            text-align: center;
+            margin: auto;
+            padding: 10px;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.623);
+        }
+
+        header > h1{
+            margin-bottom: 15px;
+        }
+        nav{
+            background-color: var(--cor02);
+            padding: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            box-shadow: 0px 8px 9px rgba(0, 0, 0, 0.747);
+            padding-top: 10px;
+            border-radius: 0px 0px 8px 8px;
+        }
+
+        nav > a{
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        nav > a:hover{
+            background-color: lightblue;
+            color: black;
+        }
+
+        img.ford{
+            height: 60px;
+        }
+
+        main{
+            margin-top: 10%;
+        }
+
+        div.bloco{
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 5px;
+            
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.233);
+            margin: auto;
+            color: black;
+            
+        }
+
+        h2#info{
+            text-align: center;
+        }
+
+        h3{
+            padding: 5px;
+        }
+
+        h4{
+            padding: 4px;
+        }
+
+        .campo{
+            box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.233);
+            border-radius: 6px;
+            height: 17px;
+            border: none;
+            
+        }
+
+        .campo::placeholder{
+            text-align: center;
+        }
+
+        input[type="submit"]{
+            width: 100%;
+            height: 35px;
+            border: none;
+            background: #0B50A0;
+            border-radius: 7px;
+            font-size: 14px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .caixa{
+            text-align: center;
+            margin-top: 15px;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registro de Operação</h1>
+        <img src="img/Ford_Motor_Company_Logo.svg.png" alt="" class="ford">
+    </header>
+    <nav>
+        <a href="index.html">Página Inicial</a>
+    </nav>
+    <main>
+        <div class="bloco">
+            <h2 id="info">Informações</h2>
+
+            <h3>Ano 2015 - Automatico - 32.000KM</h3>
+            <h3>Modelo: Territory</h3>
+            <h3>Placa: OZA - 2184</h3>
+            <h4>Tanque:</h4>
+            <input type="text" name="tanque" class="campo" placeholder="Quantidade em Litros">
+            <h4>Quilometragem:</h4>
+            <input type="text" class="campo" placeholder="Kilometragem atual">
+            <div class="caixa">
+                <input type="submit" value="Registrar Uso" id="registra"></div>
+        </div>
+    </main>
+
+    
+</body>
+</html>
